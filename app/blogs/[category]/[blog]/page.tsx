@@ -65,11 +65,11 @@ const page = ({ params }: { params: { blog: string } }) => {
                     </div>
                   )}
                 </div>
-                {blogFilteredData[0].postImage && (
+                {blogFilteredData[0].postImageSrc && (
                   <div className="mt-6 overflow-hidden  rounded-lg lg:w-fit">
                     <Image
-                      src={`${blogFilteredData[0].postImage.src}`}
-                      alt={`${blogFilteredData[0].postImage.alt}`}
+                      src={`${blogFilteredData[0].postImageSrc}`}
+                      alt={`${blogFilteredData[0].postImageAlt}`}
                       width={10000}
                       height={10000}
                       className=" h-[60vh] max-h-96 object-cover"
@@ -149,8 +149,8 @@ const page = ({ params }: { params: { blog: string } }) => {
                       >
                         <div className="overflow-hidden rounded-lg lg:w-fit">
                           <Image
-                            src={`${item.postImage.src}`}
-                            alt={`${item.postImage.alt}`}
+                            src={`${item.postImageSrc}`}
+                            alt={`${item.postImageAlt}`}
                             width={10000}
                             height={10000}
                             className=" h-60 object-cover"
@@ -172,7 +172,7 @@ const page = ({ params }: { params: { blog: string } }) => {
                           <div className="">
                             <div className="mt-2 font-semibold text-main underline-offset-8 duration-300 ease-in-out  hover:underline hover:underline-offset-2">
                               <Link
-                                href={`/blogs/${item?.catagory.toLowerCase().split(" ").join("-")}/${item.slug}`}
+                                href={`/blogs/${item?.category.toLowerCase().split(" ").join("-")}/${item.slug}`}
                               >
                                 Read More
                               </Link>
